@@ -1,0 +1,263 @@
+
+making `all' in directory /data/hoop/udunits-1.11.7/src/port
+
+make[1]: Entering directory `/data/hoop/udunits-1.11.7/src/port'
+
+making `all' in directory /data/hoop/udunits-1.11.7/src/port/misc
+
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/port/misc'
+cc -c -O -I.  -D_REENTRANT  uddummy.c
+ar rcuv libudport.a uddummy.o 
+ar: writing libudport.a
+r - uddummy.o
+case "" in \
+'') ;; \
+*)  ar rucv libudport.a ;; \
+esac
+ranlib libudport.a
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/port/misc'
+
+returning to directory /data/hoop/udunits-1.11.7/src/port
+
+
+making `all' in directory /data/hoop/udunits-1.11.7/src/port/cfortran
+
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/port/cfortran'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/port/cfortran'
+
+returning to directory /data/hoop/udunits-1.11.7/src/port
+
+make[1]: Leaving directory `/data/hoop/udunits-1.11.7/src/port'
+
+returning to directory /data/hoop/udunits-1.11.7/src
+
+
+making `all' in directory /data/hoop/udunits-1.11.7/src/lib
+
+make[1]: Entering directory `/data/hoop/udunits-1.11.7/src/lib'
+cc -c -O -I../port/misc -I../port/cfortran -DUT_DEFAULT_PATH='"/data/hoop/udunits-1.11.7/etc/udunits.dat"'  utlib.c
+cc -c -O -I../port/misc -I../port/cfortran -DUT_DEFAULT_PATH='"/data/hoop/udunits-1.11.7/etc/udunits.dat"'  utparse.c
+cc -c -O -I../port/misc -I../port/cfortran -DUT_DEFAULT_PATH='"/data/hoop/udunits-1.11.7/etc/udunits.dat"'  utscan.c
+cc -c -O -I../port/misc -I../port/cfortran -DUT_DEFAULT_PATH='"/data/hoop/udunits-1.11.7/etc/udunits.dat"'  udalloc.c
+ar rcuv libudunits.a utlib.o utparse.o utscan.o udalloc.o
+ar: writing libudunits.a
+a - utlib.o
+a - utparse.o
+a - utscan.o
+a - udalloc.o
+case "" in \
+'') ;; \
+*)  ar rucv libudunits.a ;; \
+esac
+ranlib libudunits.a
+make[1]: Leaving directory `/data/hoop/udunits-1.11.7/src/lib'
+
+returning to directory /data/hoop/udunits-1.11.7/src
+
+
+making `all' in directory /data/hoop/udunits-1.11.7/src/udunits
+
+make[1]: Entering directory `/data/hoop/udunits-1.11.7/src/udunits'
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/udunits'
+cc -c -O -I../lib -I../port/misc  udunits.c
+cc -o udunits -O udunits.o -R/data/hoop/udunits-1.11.7/src/lib -L/data/hoop/udunits-1.11.7/src/lib -ludunits -R/data/hoop/udunits-1.11.7/src/port/misc -L/data/hoop/udunits-1.11.7/src/port/misc -ludport -ly -lm
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/udunits'
+make[1]: Leaving directory `/data/hoop/udunits-1.11.7/src/udunits'
+
+returning to directory /data/hoop/udunits-1.11.7/src
+
+cd perl && perl Makefile.PL
+Warning: -L../lib changed to -L/data/hoop/udunits-1.11.7/src/perl/../lib
+Writing Makefile for UDUNITS
+
+making `dynamic' in directory /data/hoop/udunits-1.11.7/src/perl
+
+make[1]: Entering directory `/data/hoop/udunits-1.11.7/src/perl'
+cc -c -I../lib -I../port/misc -I/usr/local/include -O    -DVERSION=\"1.11.7\" -DXS_VERSION=\"1.11.7\" -KPIC -I/usr/local/apps/perl5.005_03/lib/5.00503/sun4-solaris/CORE  UDUNITS.c
+Running Mkbootstrap for UDUNITS ()
+chmod 644 UDUNITS.bs
+LD_RUN_PATH="/data/hoop/udunits-1.11.7/src/perl/../lib:/lib" cc -o blib/arch/auto/UDUNITS/UDUNITS.so -R/data/hoop/udunits-1.11.7/src/perl/../lib -R/lib -G -L/usr/local/lib UDUNITS.o    -L/data/hoop/udunits-1.11.7/src/perl/../lib -ludunits -lm 
+chmod 755 blib/arch/auto/UDUNITS/UDUNITS.so
+cp UDUNITS.bs blib/arch/auto/UDUNITS/UDUNITS.bs
+chmod 644 blib/arch/auto/UDUNITS/UDUNITS.bs
+make[1]: Leaving directory `/data/hoop/udunits-1.11.7/src/perl'
+
+returning to directory /data/hoop/udunits-1.11.7/src
+
+
+making `install' in directory /data/hoop/udunits-1.11.7/src/port
+
+make[1]: Entering directory `/data/hoop/udunits-1.11.7/src/port'
+
+making `install' in directory /data/hoop/udunits-1.11.7/src/port/misc
+
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/port/misc'
+make -w /data/hoop/udunits-1.11.7/lib LIBDIR=/data/hoop/udunits-1.11.7/lib
+make[3]: Entering directory `/data/hoop/udunits-1.11.7/src/port/misc'
+mkdir -p /data/hoop/udunits-1.11.7/lib
+chmod u+rwx,g+rws,o=rx /data/hoop/udunits-1.11.7/lib
+make[3]: Leaving directory `/data/hoop/udunits-1.11.7/src/port/misc'
+ar rcuv /data/hoop/udunits-1.11.7/lib/libudport.a uddummy.o 
+ar: writing /data/hoop/udunits-1.11.7/lib/libudport.a
+a - uddummy.o
+ranlib /data/hoop/udunits-1.11.7/lib/libudport.a
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/port/misc'
+
+returning to directory /data/hoop/udunits-1.11.7/src/port
+
+
+making `install' in directory /data/hoop/udunits-1.11.7/src/port/cfortran
+
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/port/cfortran'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/port/cfortran'
+
+returning to directory /data/hoop/udunits-1.11.7/src/port
+
+make[1]: Leaving directory `/data/hoop/udunits-1.11.7/src/port'
+
+returning to directory /data/hoop/udunits-1.11.7/src
+
+
+making `install' in directory /data/hoop/udunits-1.11.7/src/lib
+
+make[1]: Entering directory `/data/hoop/udunits-1.11.7/src/lib'
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/lib'
+ar rcuv libudunits.a utlib.o utparse.o utscan.o udalloc.o
+case "" in \
+'') ;; \
+*)  ar rucv libudunits.a ;; \
+esac
+ranlib libudunits.a
+cp libudunits.a /data/hoop/udunits-1.11.7/lib/libudunits.a
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/lib'
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/lib'
+mkdir -p /data/hoop/udunits-1.11.7/include
+chmod u+rwx,g+rws,o=rx /data/hoop/udunits-1.11.7/include
+cp udunits.h /data/hoop/udunits-1.11.7/include/udunits.h
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/lib'
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/lib'
+cp udunits.inc /data/hoop/udunits-1.11.7/include/udunits.inc
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/lib'
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/lib'
+mkdir -p /data/hoop/udunits-1.11.7/etc
+chmod u+rwx,g+rws,o=rx /data/hoop/udunits-1.11.7/etc
+cp udunits.dat /data/hoop/udunits-1.11.7/etc/udunits.dat
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/lib'
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/lib'
+mkdir -p /data/hoop/udunits-1.11.7/man/man3
+chmod u+rwx,g+rws,o=rx /data/hoop/udunits-1.11.7/man/man3
+case `uname -s` in \
+    OSF1*|IRIX*|HP-UX) \
+	sed \
+     -e '/^\.TH/s/$D\ate: \([0-9]*\)\/\([0-9]*\)\/\([0-9]*\).*\$/\1-\2-\3/'\
+	 udunits.3 > /data/hoop/udunits-1.11.7/man/man3/udunits.3;; \
+    *) \
+	sed \
+     -e '/^\.TH/s/$D\ate: \([0-9]*\)\/\([0-9]*\)\/\([0-9]*\).*\$/\1-\2-\3/'\
+	 udunits.3 | tbl | neqn > /data/hoop/udunits-1.11.7/man/man3/udunits.3;; \
+esac
+extension=`echo udunits.3 | sed 's/[^.]*\.//'`; \
+subchapter=`echo $extension | sed 's/.//'`; \
+case "$subchapter" in \
+    '') ;; \
+    *)  chapter=`echo $extension | sed 's/\(.\).*/\1/'`; \
+	if test -d /data/hoop/udunits-1.11.7/man/man3$subchapter; then \
+	    : true; \
+	else \
+	    mkdir /data/hoop/udunits-1.11.7/man/man3$subchapter; \
+	fi; \
+	rm -f /data/hoop/udunits-1.11.7/man/man3$subchapter/udunits.3; \
+	ln -s ../`basename /data/hoop/udunits-1.11.7/man/man3`/udunits.3 \
+	    /data/hoop/udunits-1.11.7/man/man3$subchapter/udunits.3; \
+	;; \
+esac
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/lib'
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/lib'
+case `uname -s` in \
+    OSF1*|IRIX*|HP-UX) \
+	sed \
+     -e '/^\.TH/s/$D\ate: \([0-9]*\)\/\([0-9]*\)\/\([0-9]*\).*\$/\1-\2-\3/'\
+	 udunits.3f > /data/hoop/udunits-1.11.7/man/man3/udunits.3f;; \
+    *) \
+	sed \
+     -e '/^\.TH/s/$D\ate: \([0-9]*\)\/\([0-9]*\)\/\([0-9]*\).*\$/\1-\2-\3/'\
+	 udunits.3f | tbl | neqn > /data/hoop/udunits-1.11.7/man/man3/udunits.3f;; \
+esac
+extension=`echo udunits.3f | sed 's/[^.]*\.//'`; \
+subchapter=`echo $extension | sed 's/.//'`; \
+case "$subchapter" in \
+    '') ;; \
+    *)  chapter=`echo $extension | sed 's/\(.\).*/\1/'`; \
+	if test -d /data/hoop/udunits-1.11.7/man/man3$subchapter; then \
+	    : true; \
+	else \
+	    mkdir /data/hoop/udunits-1.11.7/man/man3$subchapter; \
+	fi; \
+	rm -f /data/hoop/udunits-1.11.7/man/man3$subchapter/udunits.3f; \
+	ln -s ../`basename /data/hoop/udunits-1.11.7/man/man3`/udunits.3f \
+	    /data/hoop/udunits-1.11.7/man/man3$subchapter/udunits.3f; \
+	;; \
+esac
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/lib'
+make[1]: Leaving directory `/data/hoop/udunits-1.11.7/src/lib'
+
+returning to directory /data/hoop/udunits-1.11.7/src
+
+
+making `install' in directory /data/hoop/udunits-1.11.7/src/udunits
+
+make[1]: Entering directory `/data/hoop/udunits-1.11.7/src/udunits'
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/udunits'
+mkdir -p /data/hoop/udunits-1.11.7/bin
+chmod u+rwx,g+rws,o=rx /data/hoop/udunits-1.11.7/bin
+cp udunits /data/hoop/udunits-1.11.7/bin/udunits
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/udunits'
+make[2]: Entering directory `/data/hoop/udunits-1.11.7/src/udunits'
+mkdir -p /data/hoop/udunits-1.11.7/man/man1
+chmod u+rwx,g+rws,o=rx /data/hoop/udunits-1.11.7/man/man1
+case `uname -s` in \
+    OSF1*|IRIX*|HP-UX) \
+	sed \
+     -e '/^\.TH/s/$D\ate: \([0-9]*\)\/\([0-9]*\)\/\([0-9]*\).*\$/\1-\2-\3/'\
+	 udunits.1 > /data/hoop/udunits-1.11.7/man/man1/udunits.1;; \
+    *) \
+	sed \
+     -e '/^\.TH/s/$D\ate: \([0-9]*\)\/\([0-9]*\)\/\([0-9]*\).*\$/\1-\2-\3/'\
+	 udunits.1 | tbl | neqn > /data/hoop/udunits-1.11.7/man/man1/udunits.1;; \
+esac
+extension=`echo udunits.1 | sed 's/[^.]*\.//'`; \
+subchapter=`echo $extension | sed 's/.//'`; \
+case "$subchapter" in \
+    '') ;; \
+    *)  chapter=`echo $extension | sed 's/\(.\).*/\1/'`; \
+	if test -d /data/hoop/udunits-1.11.7/man/man1$subchapter; then \
+	    : true; \
+	else \
+	    mkdir /data/hoop/udunits-1.11.7/man/man1$subchapter; \
+	fi; \
+	rm -f /data/hoop/udunits-1.11.7/man/man1$subchapter/udunits.1; \
+	ln -s ../`basename /data/hoop/udunits-1.11.7/man/man1`/udunits.1 \
+	    /data/hoop/udunits-1.11.7/man/man1$subchapter/udunits.1; \
+	;; \
+esac
+make[2]: Leaving directory `/data/hoop/udunits-1.11.7/src/udunits'
+make[1]: Leaving directory `/data/hoop/udunits-1.11.7/src/udunits'
+
+returning to directory /data/hoop/udunits-1.11.7/src
+
+
+making `install' in directory /data/hoop/udunits-1.11.7/src/perl
+
+make[1]: Entering directory `/data/hoop/udunits-1.11.7/src/perl'
+mkdir blib/lib
+mkdir blib/lib/auto
+mkdir blib/lib/auto/UDUNITS
+cp UDUNITS.pm blib/lib/UDUNITS.pm
+AutoSplitting blib/lib/UDUNITS.pm (blib/lib/auto/UDUNITS)
+Warning: You do not have permissions to install into /usr/local/apps/perl5.005_03/lib/site_perl/5.005/sun4-solaris at /usr/local/apps/perl5.005_03/lib/5.00503/ExtUtils/Install.pm line 61.
+Cannot forceunlink /usr/local/apps/perl5.005_03/lib/site_perl/5.005/sun4-solaris/auto/UDUNITS/UDUNITS.so: Read-only file system at /usr/local/apps/perl5.005_03/lib/5.00503/File/Find.pm line 155
+make[1]: *** [pure_site_install] Error 30
+make[1]: Leaving directory `/data/hoop/udunits-1.11.7/src/perl'
+make: *** [perl/install] Error 1

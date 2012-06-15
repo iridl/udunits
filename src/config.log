@@ -1,0 +1,125 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:1105: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:1146: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:1175: cc -c   conftest.c 1>&5
+configure:1203: cc -c   conftest.c 1>&5
+configure:1231: cc -c   conftest.c 1>&5
+configure:1259: cc -c   conftest.c 1>&5
+configure:1303: cc -c   conftest.c 1>&5
+configure:1455: cc -c   conftest.c 1>&5
+configure:1483: cc -c   conftest.c 1>&5
+configure:1512: cc -c   conftest.c 1>&5
+configure:1928: cc -o conftest -O   conftest.c  1>&5
+Undefined			first referenced
+ symbol  			    in file
+yyerror                             conftest.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+configure:1973: cc -o conftest -O   conftest.c -ly 1>&5
+configure:2018: cc -o conftest -O   conftest.c  1>&5
+Undefined			first referenced
+ symbol  			    in file
+sin                                 conftest.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+configure:2063: cc -o conftest -O   conftest.c -lm 1>&5
+configure:2288: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:2430: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:2455: cc -E  conftest.c >/dev/null 2>conftest.out
+"configure", line 2449: cannot find include file: "DBL_DIG is defined"
+cc: acomp failed for conftest.c
+configure:2603: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:2687: cc -o conftest -O   conftest.c  1>&5
+configure:2743: cc -c -O  conftest.c 1>&5
+"configure", line 2735: identifier redeclared: atexit
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to function(void) returning void) returning int : "/usr/include/stdlib.h", line 143
+cc: acomp failed for conftest.c
+configure:2800: cc -o conftest -O   conftest.c  1>&5
+configure:2856: cc -c -O  conftest.c 1>&5
+"configure", line 2848: identifier redeclared: getenv
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to const char) returning pointer to char : "/usr/include/stdlib.h", line 146
+cc: acomp failed for conftest.c
+configure:2975: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:3059: cc -o conftest -O   conftest.c  1>&5
+configure:3115: cc -c -O  conftest.c 1>&5
+"configure", line 3107: identifier redeclared: strerror
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(int) returning pointer to char : "/usr/include/string.h", line 70
+cc: acomp failed for conftest.c
+configure:3180: cc -c -O  conftest.c 1>&5
+"configure", line 3172: identifier redeclared: strchr
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to const char, int) returning pointer to char : "/usr/include/string.h", line 58
+cc: acomp failed for conftest.c
+configure:3245: cc -c -O  conftest.c 1>&5
+"configure", line 3237: identifier redeclared: strcpy
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to char, pointer to const char) returning pointer to char : "/usr/include/string.h", line 45
+cc: acomp failed for conftest.c
+configure:3310: cc -c -O  conftest.c 1>&5
+"configure", line 3302: identifier redeclared: strrchr
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to const char, int) returning pointer to char : "/usr/include/string.h", line 61
+cc: acomp failed for conftest.c
+configure:3375: cc -c -O  conftest.c 1>&5
+"configure", line 3367: identifier redeclared: strncpy
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to char, pointer to const char, uint) returning pointer to char : "/usr/include/string.h", line 46
+cc: acomp failed for conftest.c
+configure:3440: cc -c -O  conftest.c 1>&5
+"configure", line 3432: identifier redeclared: strtok
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to char, pointer to const char) returning pointer to char : "/usr/include/string.h", line 64
+cc: acomp failed for conftest.c
+configure:3497: cc -o conftest -O   conftest.c  1>&5
+configure:3553: cc -c -O  conftest.c 1>&5
+"configure", line 3545: identifier redeclared: strstr
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to const char, pointer to const char) returning pointer to char : "/usr/include/string.h", line 63
+cc: acomp failed for conftest.c
+configure:3610: cc -o conftest -O   conftest.c  1>&5
+configure:3666: cc -c -O  conftest.c 1>&5
+"configure", line 3658: identifier redeclared: memmove
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to void, pointer to const void, uint) returning pointer to void : "/usr/include/string.h", line 44
+cc: acomp failed for conftest.c
+configure:3776: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:3926: cc -o conftest -O   conftest.c  1>&5
+configure:3982: cc -c -O  conftest.c 1>&5
+"configure", line 3974: identifier redeclared: difftime
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(long, long) returning double : "/usr/include/time.h", line 79
+cc: acomp failed for conftest.c
+configure:4039: cc -o conftest -O   conftest.c  1>&5
+configure:4095: cc -c -O  conftest.c 1>&5
+"configure", line 4087: identifier redeclared: strftime
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to char, uint, pointer to const char, pointer to const struct tm {int tm_sec, int tm_min, int tm_hour, int ... : "/usr/include/time.h", line 86
+cc: acomp failed for conftest.c
+configure:4296: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:4512: cc -o conftest -O   conftest.c  1>&5
+configure:4568: cc -c -O  conftest.c 1>&5
+"configure", line 4560: identifier redeclared: tsearch
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to const void, pointer to pointer to void, pointer to function(pointer to const void, pointer to const void... : "/usr/include/search.h", line 65
+cc: acomp failed for conftest.c
+configure:4625: cc -o conftest -O   conftest.c  1>&5
+configure:4681: cc -c -O  conftest.c 1>&5
+"configure", line 4673: identifier redeclared: tfind
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to const void, pointer to const pointer to void, pointer to function(pointer to const void, pointer to cons... : "/usr/include/search.h", line 64
+cc: acomp failed for conftest.c
+configure:4738: cc -o conftest -O   conftest.c  1>&5
+configure:4794: cc -c -O  conftest.c 1>&5
+"configure", line 4786: identifier redeclared: tdelete
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to const void, pointer to pointer to void, pointer to function(pointer to const void, pointer to const void... : "/usr/include/search.h", line 63
+cc: acomp failed for conftest.c
+configure:4851: cc -o conftest -O   conftest.c  1>&5
+configure:4907: cc -c -O  conftest.c 1>&5
+"configure", line 4899: identifier redeclared: twalk
+	current : function() returning pointer to struct {int a, int b}
+	previous: function(pointer to const void, pointer to function(pointer to const void, enum .10fake {leaf(3), endorder(2), postorder(1),... : "/usr/include/search.h", line 66
+cc: acomp failed for conftest.c

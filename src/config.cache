@@ -1,0 +1,39 @@
+# This file is a shell script that caches the results of configure
+# tests run on this system so they can be shared between configure
+# scripts and configure runs.  It is not useful on other systems.
+# If it contains results you don't want to keep, you may remove or edit it.
+#
+# By default, configure uses ./config.cache as the cache file,
+# creating it if it does not exist already.  You can give configure
+# the --cache-file=FILE option to use a different cache file; that is
+# what configure does when it calls configure scripts in
+# subdirectories, so they share the cache.
+# Giving --cache-file=/dev/null disables caching, for debugging configure.
+# config.status only pays attention to the cache file if you give it the
+# --recheck option to rerun configure.
+#
+ac_cv_func_atexit=${ac_cv_func_atexit='yes'}
+ac_cv_func_difftime=${ac_cv_func_difftime='yes'}
+ac_cv_func_getenv=${ac_cv_func_getenv='yes'}
+ac_cv_func_memmove=${ac_cv_func_memmove='yes'}
+ac_cv_func_strerror=${ac_cv_func_strerror='yes'}
+ac_cv_func_strftime=${ac_cv_func_strftime='yes'}
+ac_cv_func_strstr=${ac_cv_func_strstr='yes'}
+ac_cv_func_tdelete=${ac_cv_func_tdelete='yes'}
+ac_cv_func_tfind=${ac_cv_func_tfind='yes'}
+ac_cv_func_tsearch=${ac_cv_func_tsearch='yes'}
+ac_cv_func_twalk=${ac_cv_func_twalk='yes'}
+ac_cv_header_float_h=${ac_cv_header_float_h='yes'}
+ac_cv_header_search_h=${ac_cv_header_search_h='yes'}
+ac_cv_header_stddef_h=${ac_cv_header_stddef_h='yes'}
+ac_cv_header_stdlib_h=${ac_cv_header_stdlib_h='yes'}
+ac_cv_header_string_h=${ac_cv_header_string_h='yes'}
+ac_cv_header_time_h=${ac_cv_header_time_h='yes'}
+ac_cv_prog_AR=${ac_cv_prog_AR='ar'}
+ac_cv_prog_CC=${ac_cv_prog_CC='cc'}
+ac_cv_prog_CPP=${ac_cv_prog_CPP='cc -E'}
+ac_cv_prog_NEQN=${ac_cv_prog_NEQN='neqn'}
+ac_cv_prog_PERL=${ac_cv_prog_PERL='perl'}
+ac_cv_prog_RANLIB=${ac_cv_prog_RANLIB='ranlib'}
+ac_cv_prog_TBL=${ac_cv_prog_TBL='tbl'}
+ac_cv_prog_prog=${ac_cv_prog_prog='catman'}
