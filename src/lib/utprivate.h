@@ -42,6 +42,8 @@ extern int	UnitNotFound;	/* parser didn't find unit */
 extern utUnit	*FinalUnit;	/* fully-parsed specification */
 
 UD_EXTERN_FUNC(double utencdate,  (int year, int month, int day));
+UD_EXTERN_FUNC(double utencdateyear,  (int year, int month, int day));
+UD_EXTERN_FUNC(double utsectoyear,  (double sec));
 UD_EXTERN_FUNC(double utencclock, (int hour, int minute, double sec));
 UD_EXTERN_FUNC(int    utinput,    (void));
 UD_EXTERN_FUNC(void   utunput,    (int c));

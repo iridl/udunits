@@ -47,10 +47,42 @@ name		(%|[a-zA-Z][a-zA-Z_]*([0-9]+[a-zA-Z_]+)*)
     /* comment */ ;
 }
 
-{space}*("@"|after|AFTER|from|FROM|since|SINCE|ref|REF){space}* {
+{space}*("@"|above|ABOVE|after|AFTER|from|FROM|since|SINCE|ref|REF){space}* {
     BEGIN shift_seen;
     return SHIFT;
 }
+ 
+ /* #ifdef UT_SB97 */
+{space}*(east|East|EAST){space}* {
+  yylval.ival = UT_DIR_EAST; 
+  return DIRECTION;
+}
+
+{space}*(west|West|WEST){space}* {
+  yylval.ival = UT_DIR_WEST; 
+  return DIRECTION;
+}
+
+{space}*(south|South|SOUTH){space}* {
+  yylval.ival = UT_DIR_SOUTH; 
+  return DIRECTION;
+}
+
+{space}*(north|North|NORTH){space}* {
+  yylval.ival = UT_DIR_NORTH; 
+  return DIRECTION;
+}
+
+{space}+("+"){space}+ {
+    BEGIN 0;
+    return ADD;
+}
+
+{space}+("-"){space}+ {
+    BEGIN 0;
+    return SUBTRACT;
+}
+ /* #endif */ 
 
 {space}*(per|PER|"/"){space}* {
     BEGIN 0;

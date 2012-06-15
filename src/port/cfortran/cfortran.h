@@ -1,6 +1,7 @@
 /* cfortran.h  4.1 */          /* anonymous ftp@zebra.desy.de */
 /* Burkhard Burow  burow@desy.de                 1990 - 1998. */
 
+#define pgiFortran
 #ifndef __CFORTRAN_LOADED
 #define __CFORTRAN_LOADED
 

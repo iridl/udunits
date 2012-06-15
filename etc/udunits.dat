@@ -21,17 +21,21 @@
 ampere			P			# electric current
 count			P			# dimensionless decimal number
 candela			P			# luminous intensity
-kelvin			P			# thermodynamic temperature
+degree_Kelvin		P			# relative thermodynamic temperature
 kilogram		P			# mass
 meter			P			# length
 mole			P			# amount of substance
-second			P			# time
 radian			P			# plane angle
+second			P			# time
+year			P			# long time
 
 #
 # CONSTANTS
 #
+fraction		S 1.
 percent			S 0.01
+permil			S 0.001
+ppm	 		P 1.0e-6
 PI			S 3.14159265358979323846
 bakersdozen		S 13
 pair			P 2
@@ -75,14 +79,22 @@ candle			P candela
 #
 # UNITS OF THERMODYNAMIC TEMPERATURE
 #
-degree_Kelvin		P kelvin
-degree_Celsius		S kelvin @ 273.15
-degree_Rankine		P kelvin/1.8
-degree_Fahrenheit	P degree_Rankine @ 459.67
+#degree_Kelvin		P kelvin
+degree_Celsius		S degree_Kelvin
+degree_Rankine		P degree_Kelvin/1.8
+degree_Fahrenheit	P degree_Rankine
+
+kelvin	                S degree_Kelvin @ 0
+Fahrenheit		P degree_Rankine @ 459.67
+Celsius			P degree_Kelvin @ 273.15
+
+Fahrenheit_scale	P Fahrenheit
+Celsius_scale		P Celsius
+Kelvin_scale	        P kelvin
 
 #C			S degree_Celsius	# `C' means `coulomb'
-Celsius			S degree_Celsius
-celsius			S degree_Celsius
+celsius			S Celsius
+centigrade		S Celsius
 degree_centigrade	S degree_Celsius	# approx. was just `centigrade'
 degC			S degree_Celsius
 degreeC			S degree_Celsius
@@ -90,12 +102,12 @@ degree_C		S degree_Celsius
 degree_c		S degree_Celsius
 deg_C			S degree_Celsius
 deg_c			S degree_Celsius
-degK			S kelvin
+degK			S degree_Kelvin
 degreeK			S kelvin
-degree_K		S kelvin
-degree_k		S kelvin
-deg_K			S kelvin
-deg_k			S kelvin
+degree_K		S degree_Kelvin
+degree_k		S degree_Kelvin
+deg_K			S degree_Kelvin
+deg_k			S degree_Kelvin
 K			S kelvin
 Kelvin			P kelvin
 
@@ -105,9 +117,8 @@ degree_F		S degree_Fahrenheit
 degree_f		S degree_Fahrenheit
 deg_F			S degree_Fahrenheit
 deg_f			S degree_Fahrenheit
-F			S degree_Fahrenheit
-Fahrenheit		P degree_Fahrenheit
-fahrenheit		P degree_Fahrenheit
+F			S Fahrenheit_scale
+fahrenheit		P Fahrenheit_scale
 
 degR			S degree_Rankine
 degreeR			S degree_Rankine
@@ -128,6 +139,7 @@ avoirdupois_pound	P 4.5359237e-1 kilogram	# exact
 carat			P 2e-4 kilogram
 grain			P 6.479891e-5 kilogram	# exact
 gram			P 1e-3 kilogram		# exact
+g			P gram
 kg			S kilogram
 long_hundredweight	P 5.080235e1 kilogram
 metric_ton		P 1e3 kilogram		# exact
@@ -169,7 +181,7 @@ astronomical_unit	P 1.495979e11 meter
 fermi			P 1e-15 meter		# exact
 m			S meter
 metre			P meter
-light_year		P 9.46073e15 meter	# was ASTM's 9.46055e15 meter
+light_year		P 9.46073e15		# was ASTM's 9.46055e15 meter
 micron			P 1e-6 meter		# exact
 mil			P 2.54e-5 meter		# exact
 nautical_mile		P 1.852000e3 meter	# exact
@@ -269,12 +281,14 @@ week			P 7 day			# exact
 jiffy			S 0.01 second		# believe it or not!
 jiffies			S jiffy			# assumed plural spelling
 
-year			P tropical_year
+#year			P tropical_year
 
 yr			P year
 a			S year			# "anno"
 eon			P 1e9 year		# fuzzy
 month			P year/12		# on average
+pentad			S year/73		# by definition 365day year
+pentads			S year/73		# by definition 365day year
 
 #
 # UNITS OF PLANE ANGLE
@@ -285,25 +299,40 @@ angular_degree		P (pi/180) radian
 
 turn			P circle
 degree			P angular_degree
-degree_north		S angular_degree
-degree_east		S angular_degree
 degree_true		S angular_degree
 arcdeg			P angular_degree
 angular_minute		P angular_degree/60
 angular_second		P angular_minute/60
 grade			P 0.9 angular_degree	# exact
 
+degree_north		S degree north
+
 degrees_north		S degree_north
 degreeN			S degree_north
 degree_N		S degree_north
 degreesN		S degree_north
 degrees_N		S degree_north
+latitude		S degree_north
+Latitude		S degree_north
+LATITUDE		S degree_north
+
+degree_south		S -1 degree_north
+degrees_south		S degree_south
+degreeS			S degree_south
+degree_S		S degree_south
+degreesS		S degree_south
+degrees_S		S degree_south
+
+degree_east		S degree east
 
 degrees_east		S degree_east
 degreeE			S degree_east
 degree_E		S degree_east
 degreesE		S degree_east
 degrees_E		S degree_east
+longitude		S degree_east
+Longitude		S degree_east
+LONGITUDE		S degree_east
 
 degree_west             S -1 degree_east
 degrees_west            S degree_west
@@ -339,6 +368,7 @@ standard_free_fall	S 9.806650 meter/second2	# exact
 
 pascal			P newton/meter2
 joule			P newton.meter
+Joule			P newton.meter
 hz			S hertz
 sr			S steradian
 force			S standard_free_fall
@@ -349,6 +379,7 @@ sphere			P 4 pi steradian
 
 luxes			S lux
 watt			P joule/second
+Watt			P joule/second
 gray			P joule/kilogram	# absorbed dose. derived unit
 sievert			P joule/kilogram	# dose equivalent. derived unit
 conventional_mercury	S gravity 13595.10 kg/m3
@@ -357,7 +388,7 @@ mercury_60F		S gravity 13556.8 kg/m3	# was 13556.806
 conventional_water	S gravity 1000 kg/m3	# exact
 water_4C		S gravity 999.972 kg/m3	# was 999.97226
 water_60F		S gravity 999.001 kg/m3	# was 999.00072
-g			S gravity		# approx. should be `local'
+#g			S gravity		# approx. should be `local'
 
 volt			P watt/ampere
 mercury_32F		S mercury_0C
@@ -515,8 +546,8 @@ tex			P 1e-6 kilogram/meter	# exact
 #
 # MASS PER UNIT TIME (INCLUDES FLOW)
 #
-perm_0C			S 5.72135e-11 kg/(pascal second meter2)
-perm_23C		S 5.74525e-11 kg/(pascal second meter2)
+perm_0C			S 5.72135e-11 kg/(Pa.s.m2)
+perm_23C		S 5.74525e-11 kg/(Pa.s.m2)
 
 #
 # POWER
@@ -541,6 +572,7 @@ hp			S horsepower
 # PRESSURE OR STRESS
 #
 bar			P 1e5 pascal		# exact
+b	                S bar
 standard_atmosphere	P 1.01325e5 pascal	# exact
 technical_atmosphere	P 1 kg gravity/cm2	# exact
 inch_H2O_39F		S inch water_39F
@@ -672,7 +704,6 @@ tbsp			S tablespoon
 Tblsp			S tablespoon
 tblsp			S tablespoon
 litre			P liter
-L			S liter
 l			S liter
 tsp			S teaspoon
 pk			S peck
@@ -691,7 +722,7 @@ dr			S dram
 # COMPUTERS AND COMMUNICATION
 #
 baud			S 1/second		# exact
-b			S bit
+#b			S bit
 bps			S bit/second
 cps			S hertz
 
@@ -709,3 +740,10 @@ work_month		P work_year/12
 
 gp			S geopotential
 dynamic			S geopotential
+gpm			S geopotential meter
+mph			S miles/hour
+cycle			P 2 pi radian
+#eof
+
+
+

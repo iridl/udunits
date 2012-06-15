@@ -1,5 +1,5 @@
 ." $Id$
-.TH UDUNITS 3f "$Date: 1997/04/25 18:29:57 $" "Printed: \n(yr.\n(mo.\n(dy" "UNIDATA LIBRARY FUNCTIONS"
+.TH UDUNITS 3f "$Date$" "Printed: \n(yr.\n(mo.\n(dy" "UNIDATA LIBRARY FUNCTIONS"
 .SH NAME
 udunits, utopen, utmake, uttime, utorigin, utclr, utcpy, utorig, utscal, utmult, utinv, utdiv, utexp, utdec, utcaltime, uticaltime, utenc, utcvt, utfree, utcls \- Unidata units library
 .SH SYNOPSIS

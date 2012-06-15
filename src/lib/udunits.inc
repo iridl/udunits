@@ -30,10 +30,12 @@ C THE CORRECT TYPE.
 
 C
 C   Initialize the units package:
+      external utopen
       integer utopen
 C	(character*(*) fpath)
 
 C   Create a new unit:
+      external utmake
       PTR utmake
 C	()
 
@@ -135,3 +137,42 @@ C	(PTR unit)
 C   Close the units package:
 C     utcls
 C	()
+c--------------------------------------------------------------
+cSB97 upgrade:
+
+	integer	UT_DIR_NULL, UT_DIR_NORTH, UT_DIR_SOUTH, UT_DIR_EAST,
+     *          UT_DIR_WEST, UT_DIR_UP, UT_DIR_DOWN, UT_DIR_RIGHT,   
+     *	UT_DIR_LEFT, UT_DIR_FORWARD, UT_DIR_BACKWARD
+
+	parameter ( UT_DIR_NULL     = 0)
+	parameter ( UT_DIR_NORTH    = 1)
+	parameter ( UT_DIR_SOUTH    = 2)
+	parameter ( UT_DIR_EAST     = 3)
+	parameter ( UT_DIR_WEST     = 4)
+
+	parameter ( UT_DIR_UP       = 10)
+	parameter ( UT_DIR_DOWN     = 11)
+	parameter ( UT_DIR_RIGHT    = 12)
+	parameter ( UT_DIR_LEFT     = 13)
+	parameter ( UT_DIR_FORWARD  = 14)
+	parameter ( UT_DIR_BACKWARD = 15)
+c
+        external utseto
+c
+        external utgeto
+        double precision utgeto
+c
+        external utclro
+c
+        external utsetd
+c
+        external utgetd
+        INTEGER  utgetd
+c
+        external utclrd
+c
+        external utadd2
+c
+        external utsub2
+c end of SB97 upgrade:
+c--------------------------------------------------------------

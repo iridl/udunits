@@ -43,6 +43,14 @@ utUnit	*FinalUnit;		/* fully-parsed specification */
 %token	<rval>	TIME
 %token	<rval>	ZONE
 
+ /* #ifdef UT_SB97 */
+
+%token	<ival>	DIRECTION
+%token	<ival>	ADD
+%token	<ival>	SUBTRACT
+
+ /* #endif */
+
 %type   <rval>	number_exp
 %type   <rval>	value_exp
 %type   <rval>	timestamp
@@ -82,14 +90,24 @@ origin_exp:	  unit_exp			{
 			     * 0.555556 kelvins for the fahrenheit unit) and a
 			     * timestamp isn't necessarily so proportioned.
 			     */
+			if (utIsSeconds(&$1)) {
 			    (void)utShift(&$1, $3/$1.factor, &$$);
+}
+else {
+			    (void)utShift(&$1,utsectoyear($3)/$1.factor, &$$);
+}
 			} else {
 			    (void) utShift(&$1, $3, &$$);
 			}
 		  }
 		| unit_exp SHIFT timestamp	{
 			if (utIsTime(&$1)) {
+			if (utIsSeconds(&$1)) {
 			    (void)utShift(&$1, $3/$1.factor, &$$);
+}
+else {
+			    (void)utShift(&$1,utsectoyear($3)/$1.factor, &$$);
+}
 			} else {
 			    UnitNotFound	= 1;
 			    YYERROR;
@@ -109,6 +127,20 @@ unit_exp:	  power_exp			{
 		| unit_exp DIVIDE power_exp	{
 			(void)utDivide(&$1, &$3, &$$);
 		  }
+ /* #ifdef UT_SB97 */
+                | unit_exp ADD unit_exp	{
+		    if ( ! utAdd2(&$1, &$3, &$$)) {
+		      UnitNotFound	= 1; 
+		      YYERROR;
+		    }
+		  }
+		| unit_exp SUBTRACT unit_exp	{
+		    if ( ! utSub2(&$1, &$3, &$$)) {
+                      UnitNotFound	= 1; 
+		      YYERROR;
+		    }
+		  }
+ /* #endif */
 		;
 
 power_exp:	  factor_exp			{
@@ -150,6 +182,51 @@ quant_exp:	  NAME                          {
 			}
 			(void)utRaise(&unit, $2, &$$);
 		  }
+ /* #ifdef UT_SB97 */
+		| NAME DIRECTION		{
+			utUnit     unit;
+			if (utFind($1, &unit) != 0) {
+			    UnitNotFound	= 1;
+			    YYERROR;
+			}
+			switch (yylval.ival) {
+			case UT_DIR_SOUTH:
+			  (void)utScale(&unit, -1., &unit);
+			  (void)utSetDirection(&unit, UT_DIR_NORTH, &$$);
+			  break;
+			case UT_DIR_WEST:
+			  (void)utScale(&unit, -1., &unit);
+			  (void)utSetDirection(&unit, UT_DIR_EAST, &$$);
+			  break;
+			case UT_DIR_EAST:
+			case UT_DIR_NORTH:
+			  (void)utSetDirection(&unit, $2, &$$);
+			  break;
+			}
+		      }
+		| NAME INT DIRECTION		{
+			utUnit     unit;
+			if (utFind($1, &unit) != 0) {
+			    UnitNotFound	= 1;
+			    YYERROR;
+			}
+			(void)utRaise(&unit, $2, &unit);
+			switch (yylval.ival) {
+			case UT_DIR_SOUTH:
+			  (void)utScale(&unit, -1., &unit);
+			  (void)utSetDirection(&unit, UT_DIR_NORTH, &$$);
+			  break;
+			case UT_DIR_WEST:
+			  (void)utScale(&unit, -1., &unit);
+			  (void)utSetDirection(&unit, UT_DIR_EAST, &$$);
+			  break;
+			case UT_DIR_EAST:
+			case UT_DIR_NORTH:
+			  (void)utSetDirection(&unit, $3, &$$);
+			  break;
+			}
+		      }
+ /* #endif */
 		;
 
 value_exp:	  number_exp			{ $$ = $1; }

@@ -50,7 +50,9 @@ typedef struct utUnit {
     UtFactor    factor;         /* multiplicative scaling factor (e.g. the 
 				 * "2.54" in "2.54 cm") */
     int		hasorigin;	/* unit has origin? */
+    int 	direction;	/* direction */
     short       power[UT_MAXNUM_BASE_QUANTITIES];
+    short       opower[UT_MAXNUM_BASE_QUANTITIES];
 				/* exponents of basic units */
 } utUnit;
 
@@ -206,3 +208,6 @@ extern int	utPrint		PROTO((
 extern void	utTerm		PROTO(());
 
 #endif	/* UT_UNITS_H_INCLUDED not defined */
+
+#include "uds97.h"
+
